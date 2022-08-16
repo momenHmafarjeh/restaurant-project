@@ -42,7 +42,7 @@ public class DrinkController {
     @GetMapping("/drink/{pageNo}/{pageSize}")
     public List<Drink> findAll(@PathVariable int  pageNo ,@PathVariable int pageSize) {
 
-        return service.findall(pageNo,pageSize);
+        return service.findall(pageNo-1,pageSize);
 
     }
 

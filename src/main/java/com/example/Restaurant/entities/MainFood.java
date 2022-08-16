@@ -2,6 +2,9 @@ package com.example.Restaurant.entities;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 //@Table(name = "main_food")
@@ -9,7 +12,10 @@ public class MainFood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotEmpty
     private String name;
+
+    @Size(min = 1,message = "you cant choose less than 0 ")
     private float qantity;
 
     public MainFood(String name, float qantity) {

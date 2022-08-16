@@ -1,6 +1,9 @@
 package com.example.Restaurant.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 //@Table(name = "drink")
@@ -8,7 +11,10 @@ public class Drink {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotEmpty
     private String name;
+
+    @Size(min = 1,message = "you cant choose less than 0 ")
     private float qantity;
 
     public Drink(String name, float qantity) {

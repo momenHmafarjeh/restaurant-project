@@ -5,6 +5,7 @@ import com.example.Restaurant.entities.MainFood;
 import com.example.Restaurant.service.main.food.MainFoodServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,9 +41,9 @@ public class MainFoodController {
     }
 
     @GetMapping("/mainfood/{pageNo}/{pageSize}")
-    public List<MainFood> findAll(@PathVariable int  pageNo ,@PathVariable int pageSize) {
+    public List<MainFood> findAll(@PathVariable  @Min(1) int  pageNo , @PathVariable int pageSize) {
 
-        return service.findall(pageNo,pageSize);
+        return service.findall(pageNo-1,pageSize);
 
     }
 

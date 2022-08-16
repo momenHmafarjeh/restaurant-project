@@ -16,9 +16,7 @@ public class Admin  {
     @Min(6)
     private String password ;
 
-
-
-    public Admin (@NotEmpty String name, @NotEmpty  String password){
+    public Admin ( String name,   String password){
         this.name=name;
         this.password=password;
     }

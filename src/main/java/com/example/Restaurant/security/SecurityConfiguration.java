@@ -18,8 +18,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .permitAll()
 //                .and()
 //                .httpBasic();
-//
-//
 //    }
 
 final UserService userService ;

@@ -9,13 +9,13 @@ public interface AppetizerServise {
 
     void add(Appetizer appetizer);
 
-    void deleteById(int id);
+    void deleteById(long id);
 
-    Appetizer update(Appetizer appetizer, int id);
+    Appetizer update(Appetizer appetizer, long id);
 
     List<Appetizer> findall(int  pageNo ,int pageSize);
 
-    Optional<Appetizer> findById(int id);
+    Optional<Appetizer> findById( long id);
 
     boolean existsByName(String name);
 

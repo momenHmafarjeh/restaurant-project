@@ -4,6 +4,7 @@ package com.example.Restaurant.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -11,11 +12,11 @@ import javax.validation.constraints.NotEmpty;
 public class Appetizer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
     @NotEmpty(message = "bzbo6sh")
     private String name;
 
-    @Min(value = 1,message = "you cant choose less than 0 ")
+    @Size(min = 1,message = "you cant choose less than 0 ")
     private float qantity;
 
     public Appetizer(String name, float qantity) {
@@ -28,11 +29,11 @@ public class Appetizer {
     }
 
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

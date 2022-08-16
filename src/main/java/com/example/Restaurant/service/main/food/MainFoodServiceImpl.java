@@ -28,12 +28,12 @@ public class MainFoodServiceImpl implements MainFoodServise {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         repository.deleteById(id);
     }
 
     @Override
-    public MainFood update(MainFood mainFood, int id) {
+    public MainFood update(MainFood mainFood, long id) {
 
         MainFood update = repository.findById(id).get();
 
@@ -51,7 +51,7 @@ public class MainFoodServiceImpl implements MainFoodServise {
     }
 
     @Override
-    public Optional<MainFood> findById(int id) {
+    public Optional<MainFood> findById(long id) {
 
         return repository.findById(id);
     }

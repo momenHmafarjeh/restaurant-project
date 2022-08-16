@@ -28,12 +28,12 @@ public class DrinkServiceImpl implements DrinkService {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
         repository.deleteById(id);
     }
 
     @Override
-    public Drink update(Drink drink, int id) {
+    public Drink update(Drink drink,long id) {
 
         Drink update = repository.findById(id).get();
         update.setName(drink.getName());
@@ -50,7 +50,7 @@ public class DrinkServiceImpl implements DrinkService {
 
 
     @Override
-    public Optional<Drink> findById(int id) {
+    public Optional<Drink> findById(long id) {
 
         return repository.findById(id);
     }

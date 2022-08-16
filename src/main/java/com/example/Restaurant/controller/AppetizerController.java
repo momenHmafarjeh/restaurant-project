@@ -5,6 +5,7 @@ import com.example.Restaurant.exception.ResourceNotFoundException;
 import com.example.Restaurant.service.appetizer.AppetizerServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.util.List;
@@ -20,10 +21,9 @@ public class AppetizerController {
     }
 
     @PostMapping("/appetizer")
-    public void add(@RequestBody Appetizer appetizer) {
+    public void add( @RequestBody Appetizer appetizer) {
 
         service.add(appetizer);
-
     }
 
     @DeleteMapping("/appetizer/{id}")
@@ -58,9 +58,9 @@ public class AppetizerController {
     }
 
     @GetMapping("/appetizer/exists/{name}")
-    boolean existsByName(@PathVariable String name){
+    boolean existsByName(@PathVariable String name) {
 
-      return service.existsByName(name);
+        return service.existsByName(name);
     }
 
 }

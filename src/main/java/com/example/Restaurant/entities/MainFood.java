@@ -4,11 +4,11 @@ package com.example.Restaurant.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "main_food")
+//@Table(name = "main_food")
 public class MainFood {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
     private String name;
     private float qantity;
 
@@ -40,11 +40,11 @@ public class MainFood {
         this.qantity = qantity;
     }
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

@@ -3,11 +3,11 @@ package com.example.Restaurant.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "drink")
+//@Table(name = "drink")
 public class Drink {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private long id;
     private String name;
     private float qantity;
 
@@ -22,11 +22,11 @@ public class Drink {
     }
 
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -26,7 +26,7 @@ public class AppetizerServiceImpl implements AppetizerServise {
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(long id) {
 
         Optional<Appetizer> tist = repository.findById(id);
 
@@ -41,7 +41,7 @@ public class AppetizerServiceImpl implements AppetizerServise {
     }
 
     @Override
-    public Appetizer update(Appetizer appetizer, int id) {
+    public Appetizer update(Appetizer appetizer, long id) {
 
         Optional<Appetizer> check = repository.findById(id);
         if (check.isEmpty()) {
@@ -74,7 +74,7 @@ public class AppetizerServiceImpl implements AppetizerServise {
     }
 
     @Override
-    public Optional<Appetizer> findById(int id) {
+    public Optional<Appetizer> findById(long id) {
 
         return repository.findById(id);
     }

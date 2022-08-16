@@ -10,11 +10,11 @@ public interface DrinkService {
 
     void add(Drink drink);
 
-    void deleteById(int id);
+    void deleteById(long id);
 
-    Drink update(Drink drink, int id);
+    Drink update(Drink drink, long id);
 
     List<Drink> findall(int  pageNo ,int pageSize);
 
-    Optional<Drink> findById(int id);
+    Optional<Drink> findById(long id);
 }

@@ -3,7 +3,6 @@ package com.example.Restaurant.security.User;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import java.util.Collection;
 
 @Entity
 public class Admin  {
@@ -19,12 +18,14 @@ public class Admin  {
 
 
 
-    public Admin (String name,String password){
+    public Admin (@NotEmpty String name, @NotEmpty  String password){
         this.name=name;
         this.password=password;
     }
 
-    public Admin(){}
+    public Admin() {
+
+    }
 
 
     public long getId() {

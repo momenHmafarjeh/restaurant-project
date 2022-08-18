@@ -16,7 +16,7 @@ public class Appetizer {
     @NotEmpty(message = "bzbo6sh")
     private String name;
 
-    @Size(min = 1,message = "you cant choose less than 0 ")
+    @Min(value = 1,message = "you cant choose less than 0 ")
     private float qantity;
 
     public Appetizer(String name, float qantity) {

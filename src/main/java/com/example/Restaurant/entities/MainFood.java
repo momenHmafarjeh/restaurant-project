@@ -15,7 +15,7 @@ public class MainFood {
     @NotEmpty
     private String name;
 
-    @Size(min = 1,message = "you cant choose less than 0 ")
+   @Min(value = 1 , message = "you cant choose less than 0 ")
     private float qantity;
 
     public MainFood(String name, float qantity) {

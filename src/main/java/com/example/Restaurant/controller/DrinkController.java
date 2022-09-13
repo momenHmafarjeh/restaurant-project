@@ -18,21 +18,21 @@ public class DrinkController {
         this.service = service;
     }
 
-    @PostMapping("/drink")
+    @PostMapping("/admin/drink")
     public void add(@RequestBody Drink drink) {
 
         service.add(drink);
 
     }
 
-    @DeleteMapping("/drink/{id}")
+    @DeleteMapping("/admin/drink/{id}")
     public void delete(@PathVariable Integer id) {
 
         service.deleteById(id);
 
     }
 
-    @PutMapping("/drink/{id}")
+    @PutMapping("/admin/drink/{id}")
     public void update(@RequestBody Drink drink, @PathVariable Integer id) {
 
         service.update(drink, id);

@@ -4,7 +4,7 @@ package com.example.Restaurant.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
 
 
 @Entity

@@ -2,6 +2,7 @@ package com.example.Restaurant.service.user.admin;
 
 import com.example.Restaurant.security.User.Admin;
 import com.example.Restaurant.security.User.repository.AdminRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -41,12 +42,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    @Cacheable(value = "admin", key = "#p0" )
     public List<Admin> findall(int  pageNo , int pageSize) {
         Pageable paging = PageRequest.of(pageNo, pageSize);
 
         return repository.findAll(paging).toList();
     }
-
 
     @Override
     public Optional<Admin> findById(long id) {

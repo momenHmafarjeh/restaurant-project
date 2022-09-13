@@ -3,22 +3,23 @@ package com.example.Restaurant.security.User;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 
 @Entity
-public class Admin  {
+public class Admin implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id ;
+    private long id;
     @NotEmpty
-    private String name ;
+    private String name;
     @NotEmpty
     @Min(6)
-    private String password ;
+    private String password;
 
-    public Admin ( String name,   String password){
-        this.name=name;
-        this.password=password;
+    public Admin(String name, String password) {
+        this.name = name;
+        this.password = password;
     }
 
     public Admin() {

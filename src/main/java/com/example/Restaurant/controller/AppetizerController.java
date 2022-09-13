@@ -20,26 +20,27 @@ public class AppetizerController {
         this.service = service;
     }
 
-    @PostMapping("/appetizer")
+    @PostMapping("/admin/appetizer")
     public void add( @RequestBody Appetizer appetizer) {
 
         service.add(appetizer);
     }
 
-    @DeleteMapping("/appetizer/{id}")
+    @DeleteMapping("/admin/appetizer/{id}")
     public void delete(@PathVariable Integer id) {
 
         service.deleteById(id);
     }
 
-    @PutMapping("/appetizer/{id}")
+    @PutMapping("/admin/appetizer/{id}")
     public void update(@RequestBody Appetizer appetizer, @PathVariable Integer id) {
 
         service.update(appetizer, id);
 
     }
 
-    @GetMapping("/appetizer/{pageNo}/{pageSize}")
+
+    @GetMapping("/admin/appetizer/{pageNo}/{pageSize}")
     public List<Appetizer> findAll(@PathVariable @Min(1) int pageNo, @PathVariable @Min(1) @Max(4) int pageSize) {
 
         return service.findall(pageNo - 1, pageSize);

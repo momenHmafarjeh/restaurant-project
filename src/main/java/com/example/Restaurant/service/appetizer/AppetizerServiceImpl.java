@@ -45,7 +45,6 @@ public class AppetizerServiceImpl implements AppetizerServise {
 
         Optional<Appetizer> check = repository.findById(id);
         if (check.isEmpty()) {
-
             throw new ResourceNotFoundException(" id not exists in database ");
         }
 
@@ -55,7 +54,6 @@ public class AppetizerServiceImpl implements AppetizerServise {
         return repository.save(update);
 
 //        if (repository.existsById(id)){
-//
 //            Appetizer update = repository.findById(id).get();
 //            update.setName(appetizer.getName());
 //            update.setQantity(appetizer.getQantity());

@@ -4,18 +4,19 @@ package com.example.Restaurant.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.util.Optional;
 
 @Entity
 //@Table(name = "main_food")
-public class MainFood {
+public class MainFood implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @NotEmpty
+    @NotEmpty(message = "cant add name empty")
     private String name;
 
-   @Min(value = 1 , message = "you cant choose less than 0 ")
+   @Min(value = 1 ,  message = "you cant choose less than 0 ")
     private float qantity;
 
     public MainFood(String name, float qantity) {
@@ -24,8 +25,9 @@ public class MainFood {
         this.qantity = qantity;
 
     }
+    public MainFood(){}
 
-    public MainFood() {
+    public MainFood(Optional<MainFood> byId, String process, String order_placed_successfully) {
 
     }
 

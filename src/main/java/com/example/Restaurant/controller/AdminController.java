@@ -1,18 +1,19 @@
 package com.example.Restaurant.controller;
 
-import com.example.Restaurant.entities.Drink;
+
 import com.example.Restaurant.security.User.Admin;
-import com.example.Restaurant.service.drink.DrinkService;
-import com.example.Restaurant.service.drink.DrinkServiceImpl;
 import com.example.Restaurant.service.user.admin.AdminService;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 public class AdminController {
-
 
     private final AdminService service;
 
@@ -34,6 +35,7 @@ public class AdminController {
 
     }
 
+    //    @CachePut(value = "users", key = "#p0")
     @PutMapping("/admin/{id}")
     public void update(@RequestBody Admin admin, @PathVariable Integer id) {
 
@@ -41,10 +43,11 @@ public class AdminController {
 
     }
 
+//    @Cacheable(value = "admin", key = "#p0")
     @GetMapping("/admin/{pageNo}/{pageSize}")
-    public List<Admin> findAll(@PathVariable int  pageNo  ,@PathVariable int pageSize) {
+    public List<Admin> findAll(@PathVariable int pageNo, @PathVariable int pageSize) {
 
-        return service.findall(pageNo-1,pageSize);
+        return service.findall(pageNo - 1, pageSize);
 
     }
 
